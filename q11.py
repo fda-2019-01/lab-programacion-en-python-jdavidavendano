@@ -11,3 +11,9 @@
 ## E,2,3
 ## E,3,3
 ##
+
+from libM import generateMatrix
+
+for row in generateMatrix():
+    print(row[0], len(row[3].split(',')), len(row[4].split(',')), sep=',')
+

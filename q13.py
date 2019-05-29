@@ -10,3 +10,8 @@
 ## E,11
 ## E,16
 ##
+
+from libM import generateMatrix
+
+for row in generateMatrix():
+    print(row[0], sum([int(i.split(':')[1]) for i in row[4].split(',')]), sep=',')

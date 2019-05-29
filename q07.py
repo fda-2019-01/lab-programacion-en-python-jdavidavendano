@@ -16,3 +16,18 @@
 ##    ('9', ['A', 'B', 'E', 'C'])
 ##
 ##
+
+from libM import generateMatrix
+
+d = {}
+h = []
+
+for row in generateMatrix():
+    if row[1] in d:
+        d[row[1]] += str(' '+row[0])
+    else:
+        d[row[1]] = str(row[0])
+        h.append(row[1])
+
+for i in sorted(h):
+    print((i, d[i].split(' ')), sep=' ')

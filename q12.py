@@ -10,3 +10,19 @@
 ## f,110
 ## g,35
 ##
+
+from libM import generateMatrix
+
+d = {}
+h = []
+
+for row in generateMatrix():
+    for l in row[3].replace(',', ''):
+        if l in d:
+            d[l] += int(row[1])
+        else:
+            d[l] = int(row[1])
+            h.append(l)
+
+for i in sorted(h):
+    print(i, d[i], sep=',')

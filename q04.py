@@ -14,3 +14,19 @@
 ## 11,2
 ## 12,3
 ##
+
+from libM import generateMatrix
+
+d = {}
+h = []
+
+for row in generateMatrix():
+    rh = row[2].split('-')[1]
+    if rh in d:
+        d[rh] += 1
+    else:
+        d[rh] = 1
+        h.append(rh)
+
+for i in sorted(h):
+    print(i, d[i], sep=',')
